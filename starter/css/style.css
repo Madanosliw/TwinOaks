@@ -1,0 +1,200 @@
+/*
+COLORS:
+
+Lightest: rgba(237,250,253,1)
+Light: rgba(174,217,218,1)
+Mid: rgba(61,218,215,1)
+Dark: rgba(42,147,213,1)
+Darkest: rgba(19,85,137,1)
+
+
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 2rem;
+  background-color: #f1f2ef;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(174,217,218, 0.8),
+    rgba(42,147,213,0.8)),
+  url(../img/keys.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 78%, 50% 90%, 0 78%);
+}
+
+.header__logobox {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
+
+.header__logo {
+  height: 7.3rem;
+  animation-name: logo;
+  animation-duration: 3s;
+}
+
+.header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  transform: translate(-36%,-50%);
+  text-align: center;
+
+
+}
+
+/* #twinoaks {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+  transform: translateX(18%); */
+/* } */
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 5rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 7.6rem;
+  font-weight: 700;
+  letter-spacing: 2rem;
+  text-align: center;
+
+  animation-name: moveinleft;
+  animation-duration: 1.5s;
+  /* animation-timing-function: MDN webdocs */
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+}
+
+.heading-primary--sub{
+  display: block;
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .9rem;
+  text-align: center;
+
+  animation-name: moveinright;
+  animation-duration: 1.5s;
+}
+
+@keyframes moveinleft {
+  0% {
+      opacity: 0;
+      transform: translateX(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform-box: translate(0);
+  }
+}
+
+@keyframes moveinright {
+  0% {
+      opacity: 0;
+      transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform-box: translate(0);
+  }
+}
+
+@keyframes moveinbottom{
+  0% {
+      opacity: 0;
+      transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform-box: translateY(0);
+  }
+}
+
+@keyframes logo {
+  0% { opacity: 0};
+  100% { opacity: 100%};
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 3.2rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  animation-name: moveinbottom;
+  animation-duration: 1.4s;
+  font-size: 1.6rem;
+  /* animation-delay: 3s;
+  animation-fill-mode: backwards; */
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 1rem 1rem 1rem rgba(0,0,0,.3);
+}
+
+.btn:active {
+  transform: translateY(-.2rem);
+}
+
+.btn--white {
+  background-color: white;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn--white::after {
+  background-color: white;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}

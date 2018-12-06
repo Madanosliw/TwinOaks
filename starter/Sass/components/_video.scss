@@ -1,0 +1,18 @@
+.video2 {
+    position: absolute;
+    height: 67.5%;
+    width: 61.5%;
+    z-index: -3;
+    opacity: .4;
+    overflow: hidden;
+    border-radius: 6px;
+    filter: blur(4px);
+
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+}

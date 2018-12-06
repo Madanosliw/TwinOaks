@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -13,9 +14,13 @@
     font-size: 1.6rem;
     /* animation-delay: 3s;
     animation-fill-mode: backwards; */
+
+    //Change for the <button> element
+    border: none;
+    cursor: pointer;
   }
 
-  &:hover {
+  &:hover, {
     transform: translateY(-4px);
     box-shadow: 1rem 1rem 1rem rgba($color-black,.3);
 
@@ -25,7 +30,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-.2rem);
   }
 
@@ -36,7 +43,15 @@
     &::after {
       background-color: $color-background-button;
     }
-  }
+}
+  &--blue {
+    background-color: $color-dark;
+    color: $color-background;
+
+    &::after {
+      background-color: $color-dark;
+    }
+}
 
   &::after {
     content: "";
